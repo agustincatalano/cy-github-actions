@@ -18,10 +18,13 @@ jobs:
         #   # pass GitHub token to allow accurately detecting a build vs a re-run build
         #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+        
+      
          # Upload screenshots and videos if tests fail
       - name: Upload screenshots and videos
         if: failure()
         uses: actions/upload-artifact@v3
         with:
           name: cypress-artifacts
-          path: cypress/screenshots/**,cypress/videos/**
+          path: cypress/screenshots/**
+          
